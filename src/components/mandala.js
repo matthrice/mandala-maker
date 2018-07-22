@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import DrawCanvas from './draw-canvas';
 import BaseCanvas from './base-canvas';
 
-class Mandala extends Component {
+class MandalaMaker extends Component {
   constructor() {
     super();
     this.state = {
@@ -32,4 +32,4 @@ class Mandala extends Component {
   }
 }
 
-export default Mandala;
+export default MandalaMaker;

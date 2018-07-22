@@ -1,7 +1,7 @@
 // App.js
 
 import React, { Component } from 'react';
-import Mandala from './components/mandala';
+import MandalaMaker from './components/mandala';
 
 import './App.css';
 class App extends Component {
@@ -9,10 +9,10 @@ class App extends Component {
     return (
       <div>
         <h3 className="title">
-          Mandala
+          Mandala Maker
         </h3>
         <div className="mandala-canvas">
-          <Mandala />
+          <MandalaMaker />
         </div>
       </div>
     );
