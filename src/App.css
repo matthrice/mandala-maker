@@ -1,0 +1,28 @@
+/* App.css */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto Condensed', serif;
+}
+
+.canvas {
+  position: absolute;
+  left: 0px;
+  top: 0px
+}
+
+.base {
+  z-index: 1;
+}
+
+.draw {
+  z-index: 2
+}
+.title {
+  position: fixed;
+  z-index: 2;
+  width: 20%;
+  padding: 20px;
+  padding-left: 40px;
+}
