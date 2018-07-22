@@ -40,3 +40,7 @@ export const getRotatedPoints = (numAxes, cX, cY, x, y) => {
   }
   return coords;
 }
+
+export const distanceFromOrigin = (cX, cY, x, y) => {
+  return Math.sqrt(Math.pow(cX - x, 2), Math.pow(cY - y), 2);
+}

@@ -27,7 +27,6 @@ class DrawCanvas extends Component {
   }
 
   onMouseDown({ nativeEvent }) {
-    console.log('here');
     const { numAxes, origin } = this.props;
 
     const { offsetX, offsetY } = nativeEvent;

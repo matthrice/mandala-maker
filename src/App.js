@@ -8,9 +8,9 @@ class App extends Component {
   render() {
     return (
       <div>
-        <h3 className="title">
+        <h2 className="title">
           Mandala Maker
-        </h3>
+        </h2>
         <div className="mandala-canvas">
           <MandalaMaker />
         </div>
