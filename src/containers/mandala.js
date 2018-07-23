@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
-import DrawCanvas from './draw-canvas';
-import BaseCanvas from './base-canvas';
+import { DrawCanvas, BaseCanvas } from '../components';
 
 class MandalaMaker extends Component {
   constructor() {
@@ -22,6 +21,8 @@ class MandalaMaker extends Component {
         <BaseCanvas
           numAxes={numAxes}
           origin={origin}
+          circles={false}
+          axes={false}
         />
         <DrawCanvas
           numAxes={numAxes}

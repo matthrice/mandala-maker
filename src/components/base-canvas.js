@@ -4,6 +4,7 @@ import { paint } from '../util/canvas';
 
 const axisColor = '#000000';
 const arcColor = "#eeeeee";
+const numCircles = 10;
 
 class BaseCanvas extends Component {
   componentDidMount() {
@@ -15,10 +16,13 @@ class BaseCanvas extends Component {
 
     this.radius = Math.min(this.canvas.width, this.canvas.height) / 2 - 25;
 
-
-    // draw base
-    this.drawCircles();
-    this.drawAxes();
+    const { circles, axes } = this.props;
+    if (axes) {
+      this.drawAxes();
+    }
+    if (circles) {
+      this.drawCircles(numCircles);
+    }
   }
 
   drawAxes() {
@@ -34,16 +38,16 @@ class BaseCanvas extends Component {
       });
   }
 
-  drawCircles() {
+  drawCircles(numCircles) {
     const { origin } = this.props;
 
-    for (let i = 0; i < 10; ++i) {
+    for (let i = 1; i < numCircles + 1; ++i) {
       this.ctx.beginPath();
       this.ctx.strokeStyle = arcColor;
       this.ctx.arc(
         origin.offsetX,
         origin.offsetY,
-        this.radius * i / 10,
+        this.radius * i / numCircles,
         0, 
         Math.PI * 2,
         
