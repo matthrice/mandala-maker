@@ -6,27 +6,22 @@ class MandalaMaker extends Component {
   constructor() {
     super();
     this.state = {
-      origin: {
-        offsetX: window.innerWidth / 2,
-        offsetY: window.innerHeight / 2
-      },
+      numCircles: 10,
+      circlesVisible: true,
+      axesVisible: true,
       numAxes: 3,
     }
   }
 
   render() {
-    const { numAxes, origin } = this.state;
+    const { numCircles, numAxes, circlesVisible, axesVisible } = this.state;
     return (
       <div className="mandala">
         <BaseCanvas
           numAxes={numAxes}
-          origin={origin}
-          circles={false}
-          axes={false}
-        />
-        <DrawCanvas
-          numAxes={numAxes}
-          origin={origin}
+          numCircles={numCircles}
+          circles={circlesVisible}
+          axes={axesVisible}
         />
       </div>
     );

@@ -24,16 +24,24 @@ class DrawCanvas extends Component {
     this.ctx.lineJoin = 'round';
     this.ctx.lineCap = 'round';
     this.ctx.lineWidth = 2;
+    this.origin = {
+      offsetX: this.canvas.width / 2,
+      offsetY: this.canvas.height / 2
+    }
+    this.radius = Math.min(
+      this.origin.offsetX,
+      this.origin.offsetY
+    ) - 25;
   }
 
   onMouseDown({ nativeEvent }) {
-    const { numAxes, origin } = this.props;
+    const { numAxes } = this.props;
 
     const { offsetX, offsetY } = nativeEvent;
     this.prevPositions = getRotatedPoints(
       numAxes,
-      origin.offsetX,
-      origin.offsetY,
+      this.origin.offsetX,
+      this.origin.offsetY,
       offsetX,
       offsetY
     );
@@ -42,12 +50,12 @@ class DrawCanvas extends Component {
 
   onMouseMove({ nativeEvent }) {
     if (this.state.isPainting) {
-      const { numAxes, origin } = this.props;
+      const { numAxes } = this.props;
 
       const { offsetX, offsetY } = nativeEvent;
       const offsetData = getRotatedPoints(numAxes,
-        origin.offsetX,
-        origin.offsetY,
+        this.origin.offsetX,
+        this.origin.offsetY,
         offsetX,
         offsetY
       );
