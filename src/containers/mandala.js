@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { DrawCanvas, BaseCanvas } from '../components';
+import { BaseCanvas } from '../components';
 
 class MandalaMaker extends Component {
   constructor() {
