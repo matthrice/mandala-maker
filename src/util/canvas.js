@@ -1,3 +1,5 @@
+import { withinBoundary } from './math';
+
 export const paint = (ctx, prevPos, currPos, strokeStyle) => {
   const { offsetX, offsetY } = currPos;
   const { offsetX: x, offsetY: y } = prevPos;
@@ -11,4 +13,11 @@ export const paint = (ctx, prevPos, currPos, strokeStyle) => {
   // Visualize the line using the strokeStyle
   ctx.stroke();
   ctx.closePath();
+}
+
+export const paintConstrain = (ctx, prevPos, currPos, strokeStyle, origin, radius) => {
+  if (!withinBoundary(currPos, origin, radius)) {
+    return;
+  }
+  paint(ctx, prevPos, currPos, strokeStyle);
 }

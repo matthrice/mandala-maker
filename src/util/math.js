@@ -12,6 +12,19 @@ export const getAxisCoords = (numAxes, radius) => {
   return coords;
 }
 
+export const withinBoundary = (pos, origin, radius) => {
+  const minX = origin.offsetX - radius;
+  const minY = origin.offsetY - radius;
+  const maxX = origin.offsetX + radius;
+  const maxY = origin.offsetY + radius;
+
+  if (pos.offsetX > maxX || pos.offsetX < minX ||
+      pos.offsetY < minY || pos.offsetY > maxY) {
+    return false;
+  }
+  return true;
+}
+
 export const determineRegion = (numAxes, x, y) => {
   const inverseTan = Math.atan(y / x);
   const angle = x > 0
